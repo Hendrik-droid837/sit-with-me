@@ -1,0 +1,131 @@
+import { motion } from "framer-motion";
+
+export default function SitWithMeWebsite() {
+  return (
+    <div style={{
+      background: "#0a0a0a",
+      color: "white",
+      minHeight: "100vh",
+      padding: "40px",
+      fontFamily: "sans-serif"
+    }}>
+
+      {/* HERO */}
+      <section style={{
+        textAlign: "center",
+        maxWidth: "700px",
+        margin: "0 auto",
+        paddingTop: "80px"
+      }}>
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          style={{ fontSize: "48px" }}
+        >
+          Sit With Me
+        </motion.h1>
+
+        <p style={{ marginTop: "20px", fontSize: "20px", color: "#aaa" }}>
+          Heard. Not Fixed.
+        </p>
+
+        <p style={{ marginTop: "20px", color: "#888" }}>
+          A safe space to talk, breathe, and be heard — without judgment or pressure.
+        </p>
+
+        <a
+          href="YOUR_BOOKING_LINK"
+          style={{
+            display: "inline-block",
+            marginTop: "30px",
+            padding: "12px 24px",
+            background: "white",
+            color: "black",
+            borderRadius: "12px",
+            textDecoration: "none"
+          }}
+        >
+          Book a Session
+        </a>
+      </section>
+
+      {/* ABOUT */}
+      <section style={{
+        maxWidth: "700px",
+        margin: "80px auto",
+        textAlign: "center"
+      }}>
+        <p style={{ fontSize: "18px", color: "#ccc" }}>
+          Some days, it’s just too much.
+        </p>
+
+        <p style={{ marginTop: "20px", color: "#888" }}>
+          This is a space where you don’t have to explain everything perfectly.
+          No advice. No fixing. Just real human conversation when you need it most.
+        </p>
+      </section>
+
+      {/* SERVICES */}
+      <section style={{
+        maxWidth: "900px",
+        margin: "0 auto",
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+        gap: "20px"
+      }}>
+        {[
+          { title: "Intro Session", price: "R50" },
+          { title: "30 Minute Session", price: "R120" },
+          { title: "60 Minute Session", price: "R220" }
+        ].map((item, i) => (
+          <div key={i} style={{
+            background: "#111",
+            padding: "20px",
+            borderRadius: "16px",
+            textAlign: "center"
+          }}>
+            <h3>{item.title}</h3>
+            <p style={{ marginTop: "10px", color: "#aaa" }}>
+              {item.price}
+            </p>
+
+            <a
+              href="YOUR_BOOKING_LINK"
+              style={{
+                display: "inline-block",
+                marginTop: "20px",
+                padding: "10px 20px",
+                background: "white",
+                color: "black",
+                borderRadius: "10px",
+                textDecoration: "none"
+              }}
+            >
+              Choose
+            </a>
+          </div>
+        ))}
+      </section>
+
+      {/* DISCLAIMER */}
+      <section style={{
+        textAlign: "center",
+        marginTop: "80px",
+        fontSize: "12px",
+        color: "#666"
+      }}>
+        This is a peer support and listening service. It is not therapy or medical advice.
+      </section>
+
+      {/* FOOTER */}
+      <footer style={{
+        textAlign: "center",
+        marginTop: "40px",
+        color: "#555"
+      }}>
+        © {new Date().getFullYear()} Sit With Me
+      </footer>
+
+    </div>
+  );
+}
